@@ -13,5 +13,5 @@ public class CustomerConfig {
 	public final static String HOST_STU = "https://api.xxxxxx.com";
 
 	// 本地保存文件
-	public static final String MEDIA_SAVE_DIR = Environment.getExternalStorageDirectory().getPath() + "/PandaabcApp/";
+	public static final String MEDIA_SAVE_DIR = Environment.getExternalStorageDirectory().getPath() + "/MyBaseProApp/";
 }
