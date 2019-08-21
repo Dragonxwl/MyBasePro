@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/TextView_Profile"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"
+        android:text="请求预配置接口"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/TextView_Login"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"
+        android:text="请求登陆接口"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/TextView_UPAppList"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"
+        android:text="上传用户安装app列表"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/TextView_value"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
