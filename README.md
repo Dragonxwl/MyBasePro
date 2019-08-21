@@ -5,6 +5,8 @@
 
     retrofit2 + okhttp3 + rxjava2 实现简单网络请求 https://www.jianshu.com/p/a36a51166fb2
 
+    android studio 混淆、渠道包 https://www.jianshu.com/p/f3775cc81b6f
+
 ## base 基类
 
     Aplication
@@ -62,3 +64,5 @@
 ## 第三方库Fork地址
 
 DToast https://github.com/Dragonxwl/DToast
+
+腾讯渠道包 https://github.com/Dragonxwl/VasDolly
