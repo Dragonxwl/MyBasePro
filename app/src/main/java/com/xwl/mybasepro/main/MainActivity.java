@@ -8,6 +8,7 @@ import com.xwl.mybasepro.R;
 import com.xwl.mybasepro.base.Application;
 import com.xwl.mybasepro.base.BaseActivity;
 import com.xwl.mybasepro.config.ACConfig;
+import com.xwl.mybasepro.demo.httpDemoActivity;
 import com.xwl.mybasepro.demo.okhttpDemoActivity;
 import com.xwl.mybasepro.okhttp.HeaderInterceptor;
 import com.xwl.mybasepro.okhttp.RetrofitClient;
@@ -22,12 +23,14 @@ import static com.xwl.mybasepro.base.Application.noToken;
 public class MainActivity extends BaseActivity {
 
 	private TextView TextView_okhttp;
+	private TextView TextView_http;
 
 	@Override
 	protected void initUI() {
 		super.initUI();
 		setContentView(R.layout.main_layout);
 		TextView_okhttp = findViewById(R.id.TextView_okhttp);
+		TextView_http =findViewById(R.id.TextView_http);
 	}
 
 	@Override
@@ -54,6 +57,14 @@ public class MainActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this, okhttpDemoActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		TextView_http.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, httpDemoActivity.class);
 				startActivity(intent);
 			}
 		});
