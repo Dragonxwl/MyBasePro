@@ -9,6 +9,8 @@
 
     HttpURLConnection 封装网络请求 https://www.jianshu.com/p/8e02979448ff
 
+    xml文件简单解析 https://www.jianshu.com/p/c811bf1c983a
+
 ## base 基类
 
     Aplication
