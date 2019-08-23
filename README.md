@@ -7,6 +7,8 @@
 
     android studio 混淆、渠道包 https://www.jianshu.com/p/f3775cc81b6f
 
+    HttpURLConnection 封装网络请求 https://www.jianshu.com/p/8e02979448ff
+
 ## base 基类
 
     Aplication
