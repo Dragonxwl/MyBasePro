@@ -77,6 +77,9 @@
 
     ToastUtil DToast封装工具类
 
+## xml xml解析
+    ParseXmlService xml解析类
+
 ## 第三方库Fork地址
 
 DToast https://github.com/Dragonxwl/DToast
