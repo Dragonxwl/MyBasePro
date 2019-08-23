@@ -1,6 +1,7 @@
 package com.xwl.mybasepro.demo;
 
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.xwl.mybasepro.R;
@@ -19,6 +20,8 @@ public class getXmlValueDemoActivity extends BaseActivity {
 	private TextView TextView_xml;
 	private TextView TextView_get_xml_value;
 	private TextView TextView_value;
+	private TextView TextView_get_xml;
+	private WebView webView;
 
 	@Override
 	protected void initUI() {
@@ -27,14 +30,29 @@ public class getXmlValueDemoActivity extends BaseActivity {
 		TextView_xml = findViewById(R.id.TextView_xml);
 		TextView_get_xml_value = findViewById(R.id.TextView_get_xml_value);
 		TextView_value = findViewById(R.id.TextView_value);
+		TextView_get_xml = findViewById(R.id.TextView_get_xml);
+		webView = findViewById(R.id.WebView);
+
 	}
 
 	@Override
 	protected void initData() {
 		super.initData();
+
+		TextView_get_xml.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				webView.setVisibility(View.VISIBLE);
+				TextView_value.setVisibility(View.GONE);
+				webView.loadUrl(TextView_xml.getText().toString());
+			}
+		});
+
 		TextView_get_xml_value.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				webView.setVisibility(View.GONE);
+				TextView_value.setVisibility(View.VISIBLE);
 				// 重新保存课件url结构体
 				Runnable runnable = new Runnable() {
 					@Override

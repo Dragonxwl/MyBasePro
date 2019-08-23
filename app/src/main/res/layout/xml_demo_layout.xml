@@ -12,6 +12,15 @@
         android:text="http://ac-dev.oss-cn-hangzhou.aliyuncs.com/20190816/fdadb22d-9931-47ad-b98f-9219c0ff21e2.xml"/>
 
     <TextView
+        android:id="@+id/TextView_get_xml"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"
+        android:text="请求xml内容"
+        android:gravity="center"/>
+
+    <TextView
         android:id="@+id/TextView_get_xml_value"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -19,6 +28,12 @@
         android:layout_margin="10dp"
         android:text="请求xml节点内容"
         android:gravity="center"/>
+
+    <WebView
+        android:id="@+id/WebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></WebView>
 
     <TextView
         android:id="@+id/TextView_value"
