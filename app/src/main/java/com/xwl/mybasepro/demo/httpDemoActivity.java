@@ -1,6 +1,5 @@
 package com.xwl.mybasepro.demo;
 
-import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.os.Build;
@@ -20,13 +19,8 @@ import com.xwl.mybasepro.base.BaseTask;
 import com.xwl.mybasepro.bean.LoginBean;
 import com.xwl.mybasepro.bean.ProfileResultBean;
 import com.xwl.mybasepro.config.ACConfig;
-import com.xwl.mybasepro.okhttp.ApiService;
-import com.xwl.mybasepro.okhttp.BaseObserver;
-import com.xwl.mybasepro.okhttp.RetrofitClient;
-import com.xwl.mybasepro.okhttp.RxSchedulers;
 import com.xwl.mybasepro.utils.GsonUtil;
 import com.xwl.mybasepro.utils.StringUtils;
-import com.xwl.mybasepro.utils.ToastUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -214,10 +208,9 @@ public class httpDemoActivity extends BaseActivity {
 					JSONArray jsonArray = new JSONArray();
 					JSONObject tmpObj = null;
 					try {
-						for(int i = 0; i < appList.size(); i++)
-						{
+						for (int i = 0; i < appList.size(); i++) {
 							tmpObj = new JSONObject();
-							tmpObj.put("appName" , appList.get(i).appName);
+							tmpObj.put("appName", appList.get(i).appName);
 							tmpObj.put("packageName", appList.get(i).packageName);
 							jsonArray.put(tmpObj);
 							tmpObj = null;
