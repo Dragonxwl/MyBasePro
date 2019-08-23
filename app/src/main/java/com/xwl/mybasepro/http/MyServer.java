@@ -51,7 +51,7 @@ public class MyServer {
 	}
 
 	/**
-	 * 接口用途：新增日志
+	 * 接口用途：上传用户安装的非系统app
 	 */
 	public static Object Post_GetUserApps(JSONObject params) {
 		String response = HttpUtilsHttpURLConnection.HttpPost(Application.GetHost()
