@@ -10,8 +10,6 @@ import android.app.Application;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -22,12 +20,12 @@ import com.xwl.mybasepro.R;
 
 import java.util.List;
 
+import static com.xwl.mybasepro.base.Application.handler;
+
 /**
  * @author HUPENG
  */
 public class ToastUtil {
-
-	private static Handler handler = new Handler(Looper.getMainLooper());
 
 	/**
 	 * 此处是一个封装的Toast方法，可以取消掉上一次未完成的，直接进行下一次Toast

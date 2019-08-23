@@ -5,6 +5,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.xwl.mybasepro.config.CustomerConfig;
@@ -13,6 +15,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Application extends android.app.Application {
+
+	public static Handler handler = new Handler(Looper.getMainLooper());
 
 	public static List<Activity> activityList = new LinkedList<Activity>();
 	public static Application application;
