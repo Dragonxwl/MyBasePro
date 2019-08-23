@@ -39,6 +39,8 @@
 
     okhttpDemoActivity okhttp 请求示例
 
+    getXmlValueDemoActivity 解析xml获取节点 请求示例
+
 ## main
 
     MainActivity 启动页
