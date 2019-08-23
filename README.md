@@ -19,6 +19,10 @@
 
         接口返回结构体基类
 
+    BaseTask
+
+        AsyncTask封装的基类
+
 ## bean 数据结构体
 
 ## config 配置文件
@@ -29,11 +33,21 @@
 
 ## demo 示例
 
+    httpDemoActivity httpUrlConnection 请求示例
+
     okhttpDemoActivity okhttp 请求示例
 
 ## main
 
     MainActivity 启动页
+
+## http httpUrlConnection请求封装相关文件
+
+    HttpUtilsHttpURLConnection 自定义请求封装
+
+    MyServer 请求方法中间步封装
+
+    Protocol 请求地址
 
 ## okhttp okhttp相关文件
 
