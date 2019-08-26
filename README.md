@@ -65,6 +65,8 @@
 
     HeaderInterceptor 自定义请求头拦截器
 
+    HttpErrorLogInterceptor 自定义请求头请求错误日志拦截器
+
     RetrofitClient Retrofit类
 
     RxSchedulers RxJava

@@ -2,8 +2,12 @@ package com.xwl.mybasepro.okhttp;
 
 import android.support.annotation.NonNull;
 
+import com.google.gson.Gson;
+import com.xwl.mybasepro.http.MyServer;
 import com.xwl.mybasepro.utils.LogUtil;
+import com.xwl.mybasepro.utils.StringUtils;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -52,8 +56,9 @@ public class RetrofitClient {
 				loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
 				mOkHttpClient = new OkHttpClient.Builder()
-						.addInterceptor(loggingInterceptor)
-						.addInterceptor(customInterceptor)
+						.addInterceptor(loggingInterceptor)// 日志拦截器
+						.addInterceptor(customInterceptor)// 头部拦截器
+						.addInterceptor(getHttpErrorLogInterceptor())// 请求错误日志拦截器
 						.build();
 			}
 
@@ -71,6 +76,22 @@ public class RetrofitClient {
 					.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 					.build();
 		}
+	}
+
+	// 错误日志拦截器
+	public HttpErrorLogInterceptor getHttpErrorLogInterceptor() {
+		HttpErrorLogInterceptor httpErrorLogInterceptor = new HttpErrorLogInterceptor(new HttpErrorLogInterceptor.Logger() {
+			@Override
+			public void log(JSONObject json) {
+
+			}
+
+			@Override
+			public void sendError(@NonNull JSONObject json) {
+
+			}
+		});
+		return httpErrorLogInterceptor;
 	}
 
 	public static RequestBody jsonToRequestBody(JSONObject json) {
