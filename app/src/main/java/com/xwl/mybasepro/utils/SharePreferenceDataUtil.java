@@ -16,7 +16,7 @@ public class SharePreferenceDataUtil {
 				sp = PreferenceManager.getDefaultSharedPreferences(context);
 				editor = sp.edit();
 			} else {
-				sp = context.getSharedPreferences("pd_ac", 0);
+				sp = context.getSharedPreferences("pd_ac", Context.MODE_PRIVATE);
 				editor = sp.edit();
 			}
 		}
