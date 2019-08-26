@@ -11,6 +11,10 @@
 
     xml文件简单解析 https://www.jianshu.com/p/c811bf1c983a
 
+    Intercept(拦截器)的使用 (retrofit2 + okhttp3 + rxjava2 框架中) https://www.jianshu.com/p/3a0027e08ada
+
+    android 数据保存之SharedPreferences https://www.jianshu.com/p/3fed7cda7ce8
+
 ## base 基类
 
     Aplication
