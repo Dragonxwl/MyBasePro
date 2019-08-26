@@ -182,10 +182,6 @@ public final class HttpErrorLogInterceptor implements Interceptor {
 		if (bodyJson != null) {
 			try {
 				errorCode = bodyJson.getInt("errorCode");
-				//服务端80080001~80080099错误
-				if (errorCode >= 80080001 && errorCode <= 80080099) {
-					serverErrorEvent(bodyJson.toString());
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -199,18 +195,5 @@ public final class HttpErrorLogInterceptor implements Interceptor {
 		}
 
 		return response;
-	}
-
-	/**
-	 * 服务端80080001~80080099错误
-	 *
-	 * @param bodyJsonStr
-	 */
-	private void serverErrorEvent(String bodyJsonStr) {
-		ServerErrorBean serverErrorBean = GsonUtil.parseJsonWithGson(bodyJsonStr, ServerErrorBean.class);
-		//服务端80080001~80080099错误
-		if (serverErrorBean != null && serverErrorBean.data != null) {
-
-		}
 	}
 }
