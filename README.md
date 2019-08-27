@@ -97,3 +97,5 @@ DToast https://github.com/Dragonxwl/DToast
 腾讯渠道包 https://github.com/Dragonxwl/VasDolly
 
 Glide中文文档 https://github.com/Dragonxwl/glide-docs-cn
+
+immersionbar沉浸式 https://github.com/Dragonxwl/ImmersionBar
