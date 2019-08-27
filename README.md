@@ -15,6 +15,8 @@
 
     android 数据保存之SharedPreferences https://www.jianshu.com/p/3fed7cda7ce8
 
+    Glide简单使用 https://www.jianshu.com/p/802d1eb9bf80
+
 ## base 基类
 
     Aplication
