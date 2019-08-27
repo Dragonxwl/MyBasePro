@@ -10,7 +10,12 @@ import android.os.Looper;
 import android.util.Log;
 
 import com.xwl.mybasepro.config.CustomerConfig;
+import com.xwl.mybasepro.http.MyServer;
+import com.xwl.mybasepro.okhttp.HeaderInterceptor;
+import com.xwl.mybasepro.okhttp.RetrofitClient;
+import com.xwl.mybasepro.utils.StringUtils;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +30,8 @@ public class Application extends android.app.Application {
 
 	public static List<String> noTokenList;
 
+	public static MyServer myServer;
+
 	@Override
 	protected void attachBaseContext(Context base) {
 		super.attachBaseContext(base);
@@ -34,6 +41,19 @@ public class Application extends android.app.Application {
 	public void onCreate() {
 		super.onCreate();
 		application = this;
+
+		// 初始化 不需要token的接口
+		noToken = new String[]{
+				"/ac-client/profile/8/" + Application.getAppVersionCode(getContext()) +
+						"?channelName=" + StringUtils.getChannelName(getContext()),
+				"/ac-common/oauth/sms/stu"};
+		Application.noTokenList = Arrays.asList(noToken);
+
+		// okhttp 初始化
+		RetrofitClient.getInstance().init(Application.GetHost(), new HeaderInterceptor());
+
+		// 自定义网络请求服务初始化
+		myServer = new MyServer();
 	}
 
 	public Application() {
