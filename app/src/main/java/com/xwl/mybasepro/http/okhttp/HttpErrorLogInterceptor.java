@@ -1,8 +1,4 @@
-package com.xwl.mybasepro.okhttp;
-
-import com.xwl.mybasepro.base.Application;
-import com.xwl.mybasepro.bean.ServerErrorBean;
-import com.xwl.mybasepro.utils.GsonUtil;
+package com.xwl.mybasepro.http.okhttp;
 
 import org.json.JSONObject;
 

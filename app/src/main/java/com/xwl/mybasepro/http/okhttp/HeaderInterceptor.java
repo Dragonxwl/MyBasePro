@@ -1,8 +1,7 @@
-package com.xwl.mybasepro.okhttp;
+package com.xwl.mybasepro.http.okhttp;
 
 import android.text.TextUtils;
 
-import com.google.gson.Gson;
 import com.xwl.mybasepro.base.Application;
 import com.xwl.mybasepro.config.ACConfig;
 import com.xwl.mybasepro.utils.LogUtil;

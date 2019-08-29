@@ -1,13 +1,9 @@
-package com.xwl.mybasepro.okhttp;
+package com.xwl.mybasepro.http.okhttp;
 
 import android.support.annotation.NonNull;
 
-import com.google.gson.Gson;
-import com.xwl.mybasepro.http.MyServer;
 import com.xwl.mybasepro.utils.LogUtil;
-import com.xwl.mybasepro.utils.StringUtils;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;

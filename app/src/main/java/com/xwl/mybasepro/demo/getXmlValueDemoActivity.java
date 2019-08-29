@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.xwl.mybasepro.R;
 import com.xwl.mybasepro.base.BaseActivity;
-import com.xwl.mybasepro.xml.ParseXmlService;
+import com.xwl.mybasepro.utils.xml.ParseXmlService;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;

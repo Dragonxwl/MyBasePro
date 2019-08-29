@@ -19,10 +19,10 @@ import com.xwl.mybasepro.base.BaseBean;
 import com.xwl.mybasepro.bean.LoginBean;
 import com.xwl.mybasepro.bean.ProfileResultBean;
 import com.xwl.mybasepro.config.ACConfig;
-import com.xwl.mybasepro.okhttp.ApiService;
-import com.xwl.mybasepro.okhttp.BaseObserver;
-import com.xwl.mybasepro.okhttp.RetrofitClient;
-import com.xwl.mybasepro.okhttp.RxSchedulers;
+import com.xwl.mybasepro.http.okhttp.ApiService;
+import com.xwl.mybasepro.http.okhttp.BaseObserver;
+import com.xwl.mybasepro.http.okhttp.RetrofitClient;
+import com.xwl.mybasepro.http.okhttp.RxSchedulers;
 import com.xwl.mybasepro.utils.GsonUtil;
 import com.xwl.mybasepro.utils.StringUtils;
 

@@ -11,8 +11,8 @@ import android.util.Log;
 
 import com.xwl.mybasepro.config.CustomerConfig;
 import com.xwl.mybasepro.http.MyServer;
-import com.xwl.mybasepro.okhttp.HeaderInterceptor;
-import com.xwl.mybasepro.okhttp.RetrofitClient;
+import com.xwl.mybasepro.http.okhttp.HeaderInterceptor;
+import com.xwl.mybasepro.http.okhttp.RetrofitClient;
 import com.xwl.mybasepro.utils.StringUtils;
 
 import java.util.Arrays;

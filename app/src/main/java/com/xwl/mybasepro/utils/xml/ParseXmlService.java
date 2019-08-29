@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.xml;
+package com.xwl.mybasepro.utils.xml;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
