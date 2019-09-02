@@ -3,23 +3,30 @@ package com.xwl.mybasepro.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.gyf.immersionbar.ImmersionBar;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.xwl.mybasepro.ui.Dialog.WaitDialog;
+import com.xwl.mybasepro.function.ImmersionBarFun;
+import com.xwl.mybasepro.function.TelephonyListenFun;
+import com.xwl.mybasepro.function.WaitDialogFun;
 
 public class BaseActivity extends RxAppCompatActivity {
 
-	protected ImmersionBar mImmersionBar;// 状态栏导航栏
-	private WaitDialog mWaitDialog = null;// 等待弹框
+	/***
+	 *  功能块
+	 *  1.状态栏、导航栏
+	 *  2.来电监听
+	 *  3.等待弹框
+	 */
+	// 状态栏、导航栏
+	private ImmersionBarFun mImmersionBarFun;
+	private WaitDialogFun waitDialogFun;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// 状态栏导航栏设置
-		mImmersionBar = ImmersionBar.with(this);
-		mImmersionBar.init();
 		// Application Activity 列表 添加
 		Application.getInstance().addActivity(this);
+		// 功能块 初始化
+		initFunction();
 
 		initUI();
 		initData();
@@ -36,8 +43,8 @@ public class BaseActivity extends RxAppCompatActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// 默认风格
-		mImmersionBar.transparentBar().statusBarDarkFont(true).init();
+		// 状态栏导航栏 默认风格
+		mImmersionBarFun.mImmersionBar_Default_Activity();
 	}
 
 	@Override
@@ -47,52 +54,30 @@ public class BaseActivity extends RxAppCompatActivity {
 		super.onDestroy();
 	}
 
-
 	/**
-	 * 弹出等待框
+	 * 功能块 初始化
 	 */
-	public void showWaitDialog() {
-		try {
-			if (mWaitDialog == null) {
-				mWaitDialog = new WaitDialog(BaseActivity.this);
-				mWaitDialog.setCancelable(false);
-				mWaitDialog.setCanceledOnTouchOutside(false);
-				mWaitDialog.getWindow().setDimAmount(0f);
-				mWaitDialog.show();
-			}
-		} catch (Exception e) {
-
-		}
+	public void initFunction() {
+		// 状态栏导航栏 初始化
+		mImmersionBarFun = new ImmersionBarFun(this);
+		// 来电监听 回调方法Call_
+		new TelephonyListenFun(this);
+		// 等待弹框 初始化
+		waitDialogFun = new WaitDialogFun(this);
 	}
 
 	/**
-	 * 弹出等待框
+	 * 功能块 电话监听回调方法
 	 */
-	public void showWaitDialog(boolean flag) {
-		try {
-			if (mWaitDialog == null) {
-				mWaitDialog = new WaitDialog(BaseActivity.this);
-				mWaitDialog.setCancelable(flag);
-				mWaitDialog.setCanceledOnTouchOutside(flag);
-				mWaitDialog.getWindow().setDimAmount(0f);
-				mWaitDialog.show();
-			}
-		} catch (Exception e) {
+	public void Call_RINGING() {// 响铃状态
 
-		}
 	}
 
-	/**
-	 * 消除等待框
-	 */
-	public void hideWaitDialog() {
-		try {
-			if (mWaitDialog != null) {
-				mWaitDialog.dismiss();
-				mWaitDialog = null;
-			}
-		} catch (Exception e) {
+	public void Call_OFFHOOK() {// 拨号状态、接听状态、保持通话状态
 
-		}
+	}
+
+	public void Call_IDLE() {// 空闲状态
+
 	}
 }
