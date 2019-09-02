@@ -14,6 +14,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import static com.xwl.mybasepro.base.Application.noTokenList;
+import static com.xwl.mybasepro.utils.HostUtil.GetHost;
 
 public class HeaderInterceptor implements Interceptor {
 
@@ -25,7 +26,7 @@ public class HeaderInterceptor implements Interceptor {
 		builder.addHeader("Content-Type", "application/json");
 		builder.addHeader("request-id", StringUtils.getUUID());
 		//设置token
-		if (!noTokenList.contains(originalRequest.url().toString().replace(Application.GetHost(),""))) {
+		if (!noTokenList.contains(originalRequest.url().toString().replace(GetHost(),""))) {
 			String token = ACConfig.getInstance().getAccessToken();
 			if (!TextUtils.isEmpty(token)) {
 				builder.addHeader("access-token", token);

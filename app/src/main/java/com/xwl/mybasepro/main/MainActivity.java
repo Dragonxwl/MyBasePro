@@ -11,6 +11,8 @@ import com.xwl.mybasepro.demo.getXmlValueDemoActivity;
 import com.xwl.mybasepro.demo.httpDemoActivity;
 import com.xwl.mybasepro.demo.okhttpDemoActivity;
 
+import static com.xwl.mybasepro.utils.HostUtil.SetHost;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -32,7 +34,7 @@ public class MainActivity extends BaseActivity {
 		super.initData();
 
 		// 切换服务器
-		Application.SetHost(3);
+		SetHost(3);
 
 		TextView_okhttp.setOnClickListener(new View.OnClickListener() {
 			@Override
