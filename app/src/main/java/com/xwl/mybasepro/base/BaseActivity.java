@@ -35,6 +35,13 @@ public class BaseActivity extends RxAppCompatActivity {
 	}
 
 	@Override
+	protected void onResume() {
+		super.onResume();
+		// 默认风格
+		mImmersionBar.transparentBar().statusBarDarkFont(true).init();
+	}
+
+	@Override
 	protected void onDestroy() {
 		// Application Activity 列表 删除
 		Application.getInstance().removeActivity(this);

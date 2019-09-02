@@ -143,6 +143,8 @@ public class Application extends android.app.Application {
 				NOW_HOST_STU = CustomerConfig.HOST_STU_T2;
 				break;
 		}
+		// okhttp 初始化
+		RetrofitClient.getInstance().init(Application.GetHost(), new HeaderInterceptor());
 	}
 
 	public static String GetHost() {
