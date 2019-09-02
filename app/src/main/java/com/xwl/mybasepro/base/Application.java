@@ -3,11 +3,8 @@ package com.xwl.mybasepro.base;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
 import com.xwl.mybasepro.http.MyServer;
 import com.xwl.mybasepro.http.okhttp.HeaderInterceptor;
