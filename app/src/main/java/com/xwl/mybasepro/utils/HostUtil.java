@@ -1,8 +1,8 @@
 package com.xwl.mybasepro.utils;
 
 import com.xwl.mybasepro.config.CustomerConfig;
-import com.xwl.mybasepro.http.okhttp.HeaderInterceptor;
-import com.xwl.mybasepro.http.okhttp.RetrofitClient;
+import com.xwl.mybasepro.utils.http.okhttp.HeaderInterceptor;
+import com.xwl.mybasepro.utils.http.okhttp.RetrofitClient;
 
 public class HostUtil {
 	public static String NOW_HOST_STU = CustomerConfig.HOST_STU;

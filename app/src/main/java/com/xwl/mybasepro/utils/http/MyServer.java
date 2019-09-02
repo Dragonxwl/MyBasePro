@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.http;
+package com.xwl.mybasepro.utils.http;
 
 import com.google.gson.Gson;
 import com.xwl.mybasepro.base.Application;

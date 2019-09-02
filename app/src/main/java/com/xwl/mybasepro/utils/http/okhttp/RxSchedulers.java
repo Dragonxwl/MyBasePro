@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.http.okhttp;
+package com.xwl.mybasepro.utils.http.okhttp;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableTransformer;

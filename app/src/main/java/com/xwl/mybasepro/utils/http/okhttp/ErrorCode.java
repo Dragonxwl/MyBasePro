@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.http.okhttp;
+package com.xwl.mybasepro.utils.http.okhttp;
 
 public class ErrorCode {
     public static final int SUCCESS = 0;

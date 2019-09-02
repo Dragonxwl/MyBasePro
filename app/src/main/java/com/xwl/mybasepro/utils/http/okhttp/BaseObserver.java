@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.http.okhttp;
+package com.xwl.mybasepro.utils.http.okhttp;
 
 import com.xwl.mybasepro.base.Application;
 import com.xwl.mybasepro.base.BaseBean;

@@ -1,8 +1,7 @@
-package com.xwl.mybasepro.http.okhttp;
+package com.xwl.mybasepro.utils.http.okhttp;
 
 import android.text.TextUtils;
 
-import com.xwl.mybasepro.base.Application;
 import com.xwl.mybasepro.config.ACConfig;
 import com.xwl.mybasepro.utils.LogUtil;
 import com.xwl.mybasepro.utils.StringUtils;
@@ -13,8 +12,6 @@ import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import static com.xwl.mybasepro.utils.HostUtil.GetHost;
 
 public class HeaderInterceptor implements Interceptor {
 

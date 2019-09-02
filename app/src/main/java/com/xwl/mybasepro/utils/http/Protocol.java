@@ -1,4 +1,4 @@
-package com.xwl.mybasepro.http;
+package com.xwl.mybasepro.utils.http;
 
 public class Protocol {
 

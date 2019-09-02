@@ -6,9 +6,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.xwl.mybasepro.http.MyServer;
-import com.xwl.mybasepro.http.okhttp.HeaderInterceptor;
-import com.xwl.mybasepro.http.okhttp.RetrofitClient;
+import com.xwl.mybasepro.utils.http.MyServer;
+import com.xwl.mybasepro.utils.http.okhttp.HeaderInterceptor;
+import com.xwl.mybasepro.utils.http.okhttp.RetrofitClient;
 import com.xwl.mybasepro.utils.TokenCheckUtil;
 
 import java.util.LinkedList;
