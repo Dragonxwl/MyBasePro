@@ -3,6 +3,7 @@ package com.xwl.mybasepro.http;
 import android.text.TextUtils;
 
 import com.xwl.mybasepro.config.ACConfig;
+import com.xwl.mybasepro.utils.TokenCheckUtil;
 
 import org.json.JSONObject;
 
@@ -14,8 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
-
-import static com.xwl.mybasepro.base.Application.noTokenList;
 
 /**
  * Created by Xiang on 2018/5/30.
@@ -46,7 +45,7 @@ public class HttpUtilsHttpURLConnection {
 			// 设置文件类型:
 			connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 			//设置token
-			if (!noTokenList.contains(urlStr)) {
+			if (TokenCheckUtil.isNeedToken(urlStr)) {
 				connection.setRequestProperty("access-token",
 						ACConfig.getInstance().getAccessToken());
 			}
@@ -99,7 +98,7 @@ public class HttpUtilsHttpURLConnection {
 			connection.setReadTimeout(5000);
 			connection.setConnectTimeout(5000);
 			//设置token
-			if (!noTokenList.contains(urlStr)) {
+			if (TokenCheckUtil.isNeedToken(urlStr)) {
 				connection.setRequestProperty("access-token",
 						ACConfig.getInstance().getAccessToken());
 			}

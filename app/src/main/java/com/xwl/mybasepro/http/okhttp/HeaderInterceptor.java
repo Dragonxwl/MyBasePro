@@ -6,6 +6,7 @@ import com.xwl.mybasepro.base.Application;
 import com.xwl.mybasepro.config.ACConfig;
 import com.xwl.mybasepro.utils.LogUtil;
 import com.xwl.mybasepro.utils.StringUtils;
+import com.xwl.mybasepro.utils.TokenCheckUtil;
 
 import java.io.IOException;
 
@@ -13,7 +14,6 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.xwl.mybasepro.base.Application.noTokenList;
 import static com.xwl.mybasepro.utils.HostUtil.GetHost;
 
 public class HeaderInterceptor implements Interceptor {
@@ -26,7 +26,7 @@ public class HeaderInterceptor implements Interceptor {
 		builder.addHeader("Content-Type", "application/json");
 		builder.addHeader("request-id", StringUtils.getUUID());
 		//设置token
-		if (!noTokenList.contains(originalRequest.url().toString().replace(GetHost(),""))) {
+		if (TokenCheckUtil.isNeedToken(originalRequest.url().toString())) {
 			String token = ACConfig.getInstance().getAccessToken();
 			if (!TextUtils.isEmpty(token)) {
 				builder.addHeader("access-token", token);

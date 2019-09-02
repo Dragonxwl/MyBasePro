@@ -12,9 +12,8 @@ import android.util.Log;
 import com.xwl.mybasepro.http.MyServer;
 import com.xwl.mybasepro.http.okhttp.HeaderInterceptor;
 import com.xwl.mybasepro.http.okhttp.RetrofitClient;
-import com.xwl.mybasepro.utils.StringUtils;
+import com.xwl.mybasepro.utils.TokenCheckUtil;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,10 +25,6 @@ public class Application extends android.app.Application {
 
 	public static List<Activity> activityList = new LinkedList<Activity>();
 	public static Application application;
-
-	public static String[] noToken;
-
-	public static List<String> noTokenList;
 
 	public static MyServer myServer;
 
@@ -43,12 +38,8 @@ public class Application extends android.app.Application {
 		super.onCreate();
 		application = this;
 
-		// 初始化 不需要token的接口
-		noToken = new String[]{
-				"/ac-client/profile/8/" + Application.getAppVersionCode(getContext()) +
-						"?channelName=" + StringUtils.getChannelName(getContext()),
-				"/ac-common/oauth/sms/stu"};
-		Application.noTokenList = Arrays.asList(noToken);
+		// 不需要token的连接初始化
+		TokenCheckUtil.setNotNeedTokenUrls();
 
 		// okhttp 初始化
 		RetrofitClient.getInstance().init(GetHost(), new HeaderInterceptor());
@@ -88,42 +79,5 @@ public class Application extends android.app.Application {
 
 	public static Context getContext() {
 		return application.getApplicationContext();
-	}
-
-	public static int getAppVersionCode(Context context) {
-		int versionCode = 0;
-		try {
-			// ---get the package info---
-			PackageManager pm = context.getPackageManager();
-			PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
-			versionCode = pi.versionCode;
-		} catch (Exception e) {
-			Log.e("VersionInfo", "Exception", e);
-		}
-		return versionCode;
-	}
-
-	public static String getAppFirstActivity() {
-		String activityName = "";
-		if (activityList != null && activityList.size() > 0) {
-			activityName = activityList.get(activityList.size() - 1).getLocalClassName();
-		}
-		return activityName;
-	}
-
-	public static String getAppVersionName(Context context) {
-		String versionName = "";
-		try {
-			// ---get the package info---
-			PackageManager pm = context.getPackageManager();
-			PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
-			versionName = pi.versionName;
-			if (versionName == null || versionName.length() <= 0) {
-				return "";
-			}
-		} catch (Exception e) {
-			Log.e("VersionInfo", "Exception", e);
-		}
-		return versionName;
 	}
 }
