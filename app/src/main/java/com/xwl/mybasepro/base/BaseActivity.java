@@ -21,7 +21,6 @@ public class BaseActivity extends RxAppCompatActivity {
 		// Application Activity 列表 添加
 		Application.getInstance().addActivity(this);
 
-
 		initUI();
 		initData();
 	}
@@ -47,7 +46,6 @@ public class BaseActivity extends RxAppCompatActivity {
 		Application.getInstance().removeActivity(this);
 		super.onDestroy();
 	}
-
 
 
 	/**
