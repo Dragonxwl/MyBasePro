@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.xwl.mybasepro.utils.HostUtil.GetHost;
+import static com.xwl.mybasepro.utils.StringUtils.getAppVersionCode;
 
 public class TokenCheckUtil {
 	public static String[] noToken;
@@ -15,7 +16,7 @@ public class TokenCheckUtil {
 	public static void setNotNeedTokenUrls() {
 		// 初始化 不需要token的接口
 		noToken = new String[]{
-				"/ac-client/profile/8/" + Application.getAppVersionCode(Application.getContext()) +
+				"/ac-client/profile/8/" + getAppVersionCode(Application.getContext()) +
 						"?channelName=" + StringUtils.getChannelName(Application.getContext()),
 				"/ac-common/oauth/sms/stu"};
 		noTokenList = Arrays.asList(noToken);

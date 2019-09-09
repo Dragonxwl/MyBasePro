@@ -33,6 +33,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.xwl.mybasepro.utils.StringUtils.getAppVersionCode;
+
 public class okhttpDemoActivity extends BaseActivity {
 
 	private TextView TextView_Profile;
@@ -106,7 +108,7 @@ public class okhttpDemoActivity extends BaseActivity {
 	 */
 	public void Get_getProfileByAppId(final Context context) {
 		try {
-			int buildId = Application.getAppVersionCode(context);
+			int buildId = getAppVersionCode(context);
 			Map<String, Object> params = new HashMap<>();
 			params.put("channelName", StringUtils.getChannelName(this));
 

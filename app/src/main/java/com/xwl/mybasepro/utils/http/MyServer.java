@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.util.Map;
 
 import static com.xwl.mybasepro.utils.HostUtil.GetHost;
+import static com.xwl.mybasepro.utils.StringUtils.getAppVersionCode;
 
 public class MyServer {
 
@@ -19,7 +20,7 @@ public class MyServer {
 	 */
 	public static Object GET_getByAppId(Map<String, String> params) {
 		String response = HttpUtilsHttpURLConnection.HttpGet(GetHost()
-				+ Protocol.GET_getByAppId + "/8/" + Application.getAppVersionCode(Application.getContext()), params);
+				+ Protocol.GET_getByAppId + "/8/" + getAppVersionCode(Application.getContext()), params);
 
 		try {
 			Gson gson = new Gson();
